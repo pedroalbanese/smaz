@@ -34,7 +34,12 @@ func compressInput() error {
 		return fmt.Errorf("failed to read from stdin: %w", err)
 	}
 
-	compressed := smaz.Compress(data)
+	// Corrigido: Compress retorna ([]byte, error)
+	compressed, err := smaz.Compress(data)
+	if err != nil {
+		return fmt.Errorf("failed to compress data: %w", err)
+	}
+
 	_, err = os.Stdout.Write(compressed)
 	if err != nil {
 		return fmt.Errorf("failed to write to stdout: %w", err)
