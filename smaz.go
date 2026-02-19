@@ -2,10 +2,6 @@
 // Based on the original smaz library by antirez.
 package smaz
 
-import (
-	"errors"
-)
-
 // Codebook entries (same as in Python and PHP versions)
 var codeStrings = []string{
 	" ", "the", "e", "t", "a", "of", "o", "and", "i", "n", "s", "e ", "r", " th",
